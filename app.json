@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "ReviseMinder",
-    "slug": "ReviseMinder",
+    "name": "revise-minder",
+    "slug": "revise-minder",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
