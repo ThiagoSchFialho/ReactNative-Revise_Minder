@@ -1,6 +1,5 @@
 export const lightTheme = {
     mainColor: '#1A97F0',
-    HomeBackground: '#F3F7FA',
     background: '#EBF0F5',
     secondBackground: '#FFFFFF',
     gradientBackground: 'linear-gradient(140deg, #FFFFFF, 65%, #DEDEDE 100%)',
@@ -17,7 +16,6 @@ export const lightTheme = {
 
 export const theme = {
     mainColor: '#1A97F0',
-    HomeBackground: '#171823',
     background: '#171823',
     secondBackground: '#242533',
     gradientBackground: 'linear-gradient(140deg, #242533, 65%, #11121C 100%)',

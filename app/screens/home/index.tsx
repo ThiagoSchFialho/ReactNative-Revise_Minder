@@ -82,7 +82,7 @@ export default function Home() {
               width: 10,
               height: 10,
               borderRadius: 5,
-              backgroundColor: currentIndex === index ? "#1A97F0" : "#C1C1C1",
+              backgroundColor: currentIndex === index ? "#1A97F0" : "#FFFFFF",
               marginHorizontal: 10,
             }}
           />

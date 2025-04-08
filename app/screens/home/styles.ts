@@ -7,9 +7,9 @@ const screenHeight = Dimensions.get("window").height;
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: 30,
+    paddingTop: 20,
     paddingHorizontal: 30,
-    backgroundColor: theme.HomeBackground,
+    backgroundColor: "#171823",
   },
   logo: {
     width: 200,
@@ -53,18 +53,18 @@ export const styles = StyleSheet.create({
   dots: {
     flexDirection: "row",
     justifyContent: "center",
-    marginBottom: 70
+    marginBottom: 90
   },
   startButton: {
     backgroundColor: theme.mainColor,
-    paddingVertical: 17,
+    paddingVertical: 15,
     borderRadius: 10,
     marginBottom: 40
   },
   startButtonText: {
     textAlign: "center",
     fontFamily: "Montserrat-SemiBold",
-    fontSize: 24,
+    fontSize: 20,
     color: theme.text,
   },
   haveAnAccount: {
@@ -79,5 +79,6 @@ export const styles = StyleSheet.create({
     fontFamily: "Montserrat-SemiBold",
     fontSize: 18,
     color: theme.mainColor,
+    textDecorationLine: "underline"
   }
 });

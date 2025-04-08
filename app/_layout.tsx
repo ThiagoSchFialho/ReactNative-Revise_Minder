@@ -23,7 +23,7 @@ export default function RootLayout() {
     <>
       <StatusBar
         barStyle="light-content"
-        backgroundColor={theme.HomeBackground}
+        backgroundColor={theme.background}
         translucent={false}
       />
       
