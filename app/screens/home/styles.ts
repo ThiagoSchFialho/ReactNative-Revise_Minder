@@ -2,7 +2,6 @@ import { Dimensions, StyleSheet } from "react-native";
 import { theme } from "../../constants/theme";
 
 const screenWidth = Dimensions.get("window").width;
-const screenHeight = Dimensions.get("window").height;
 
 export const styles = StyleSheet.create({
   container: {
@@ -12,7 +11,7 @@ export const styles = StyleSheet.create({
     backgroundColor: "#171823",
   },
   logo: {
-    width: 200,
+    width: 250,
     height: 55,
     marginHorizontal: "auto",
     marginBottom: 45

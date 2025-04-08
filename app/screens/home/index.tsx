@@ -1,6 +1,7 @@
 import { View, Text, Image, Dimensions, ScrollView, TouchableOpacity } from "react-native";
 import { styles } from "./styles";
 import { useState } from "react";
+import { router } from "expo-router";
 
 interface Benefit {
   image: any;
@@ -94,7 +95,7 @@ export default function Home() {
       </TouchableOpacity>
 
       <Text style={styles.haveAnAccount}>
-        Já tem uma conta? <Text style={styles.anchor} onPress={() => alert("Entrar")}>Entre</Text>
+        Já tem uma conta? <Text style={styles.anchor} onPress={() => router.push('/screens/login')}>Entre</Text>
       </Text>
     </View>
   );
