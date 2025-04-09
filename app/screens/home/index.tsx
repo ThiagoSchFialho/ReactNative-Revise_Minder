@@ -90,7 +90,7 @@ export default function Home() {
         ))}
       </View>
 
-      <TouchableOpacity style={styles.startButton} onPress={() => alert("Começou!")}>
+      <TouchableOpacity style={styles.startButton} onPress={() => router.push('/screens/signUp')}>
         <Text style={styles.startButtonText}>Começar</Text>
       </TouchableOpacity>
 
