@@ -11,8 +11,22 @@ export const styles = StyleSheet.create({
     width: 301,
     height: 82,
     marginHorizontal: "auto",
-    marginTop: 90,
-    marginBottom: 60
+    marginVertical: 40
+  },
+  title: {
+    fontFamily: "Montserrat-SemiBold",
+    color: theme.text,
+    fontSize: 24,
+    textAlign: "center",
+    marginTop: 40,
+    marginBottom: 20
+  },
+  text: {
+    fontFamily: "Montserrat-SemiBold",
+    color: theme.secondText,
+    fontSize: 16,
+    textAlign: "center",
+    marginBottom: 80
   },
   inputContainer: {
     flexDirection: 'row',
@@ -35,23 +49,13 @@ export const styles = StyleSheet.create({
     backgroundColor: theme.mainColor,
     borderRadius: 10,
     paddingVertical: 10,
-    marginTop: 100,
-    marginBottom: 80
+    marginTop: 80,
+    marginBottom: 50
   },
   buttonText: {
     textAlign: "center",
     color: theme.text,
     fontFamily: "Montserrat-SemiBold",
     fontSize: 24
-  },
-  termsAndPolicy: {
-    color: theme.secondText,
-    fontFamily: "Montserrat-SemiBold",
-    fontSize: 16,
-    textAlign: "center",
-  },
-  terms: {
-    color: theme.mainColor,
-    textDecorationLine: "underline",
   }
 })

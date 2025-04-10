@@ -1,8 +1,9 @@
 import { View, Image, Text, TextInput, TouchableOpacity } from 'react-native';
 import { styles } from './styles';
 import { useState } from 'react';
-import { router } from 'expo-router';
 import Icon from 'react-native-vector-icons/Feather';
+import { theme } from '@/app/constants/theme';
+import { router } from 'expo-router';
 
 export default function SignUp() {
   const [email, setEmail] = useState('');
@@ -10,7 +11,8 @@ export default function SignUp() {
   const [confirmPassword, setConfirmPassword] = useState('');
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
 
-  const handleLogin = () => {
+  const handleSignUp = () => {
+    router.push('screens/verifyEmail'),
     alert(email + password + confirmPassword);
   }
 
@@ -20,12 +22,12 @@ export default function SignUp() {
         style={styles.logo}
         source={require("@/app/assets/images/logo.png")}
       />
-      <View style={styles.formContainer}>
+      <View>
         <View style={[styles.inputContainer, {marginBottom: 30}]}>
           <TextInput
             style={styles.input}
             placeholder='Email'
-            placeholderTextColor={"rgba(255, 255, 255, 0.7)"}
+            placeholderTextColor={theme.secondText}
             keyboardType='email-address'
             autoCapitalize='none'
             onChangeText={email => setEmail(email)}
@@ -34,9 +36,9 @@ export default function SignUp() {
 
         <View style={[styles.inputContainer, {marginBottom: 30}]}>
           <TextInput
-            style={styles.input}
+            style={[styles.input, {width: "90%"}]}
             placeholder='Senha'
-            placeholderTextColor={"rgba(255, 255, 255, 0.7)"}
+            placeholderTextColor={theme.secondText}
             secureTextEntry={!isPasswordVisible}
             onChangeText={password => setPassword(password)}
           />
@@ -51,9 +53,9 @@ export default function SignUp() {
 
         <View style={styles.inputContainer}>
           <TextInput
-            style={styles.input}
+            style={[styles.input, {width: "90%"}]}
             placeholder='Confirme a Senha'
-            placeholderTextColor={"rgba(255, 255, 255, 0.7)"}
+            placeholderTextColor={theme.secondText}
             secureTextEntry={!isPasswordVisible}
             onChangeText={confirmPassword => setConfirmPassword(confirmPassword)}
           />
@@ -66,13 +68,12 @@ export default function SignUp() {
           </TouchableOpacity>
         </View>
 
-        <TouchableOpacity style={styles.button} onPress={handleLogin}>
+        <TouchableOpacity style={styles.button} onPress={handleSignUp}>
           <Text style={styles.buttonText}>Cadastrar</Text>
         </TouchableOpacity>
 
         <Text
           style={styles.termsAndPolicy}
-          onPress={() => router.push('/screens/forgotPassword')}
         >
           Ao se cadastrar, você concorda com nossos <Text style={styles.terms} onPress={() => alert('termos')}>Termos de serviço</Text> e <Text style={styles.terms} onPress={() => alert('política')}>Política de privacidade</Text>.
         </Text>

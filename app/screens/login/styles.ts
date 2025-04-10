@@ -1,7 +1,5 @@
-import { StyleSheet, Dimensions } from "react-native";
+import { StyleSheet } from "react-native";
 import { theme } from '../../constants/theme'
-
-const screenWidth = Dimensions.get("window").width;
 
 export const styles = StyleSheet.create({
   container: {
@@ -13,9 +11,7 @@ export const styles = StyleSheet.create({
     width: 301,
     height: 82,
     marginHorizontal: "auto",
-    marginVertical: 130
-  },
-  formContainer: {
+    marginVertical: 90
   },
   inputContainer: {
     flexDirection: 'row',
@@ -29,8 +25,8 @@ export const styles = StyleSheet.create({
   },
   input: {
     height: 50,
-    width: "90%",
-    fontSize: 18,
+    width: "100%",
+    fontSize: 17,
     fontFamily: "Montserrat-Medium",
     color: theme.text,
   },
@@ -38,7 +34,7 @@ export const styles = StyleSheet.create({
     backgroundColor: theme.mainColor,
     borderRadius: 10,
     paddingVertical: 10,
-    marginTop: 90,
+    marginTop: 100,
     marginBottom: 50
   },
   buttonText: {
