@@ -42,7 +42,7 @@ export default function Home() {
     {
       image: require("@/app/assets/images/star.png"),
       title: "Simplicidade Intuitiva",
-      text: "Navegue pelo nosso site de forma fácil e intuitiva. Não é necessário ser um expert em tecnologia para aproveitar todos os benefícios.",
+      text: "Navegue pelo nosso app de forma fácil e intuitiva. Não é necessário ser um expert em tecnologia para aproveitar todos os benefícios.",
     },
   ];
 

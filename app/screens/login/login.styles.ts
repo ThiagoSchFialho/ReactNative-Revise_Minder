@@ -30,6 +30,9 @@ export const styles = StyleSheet.create({
     fontFamily: "Montserrat-Medium",
     color: theme.text,
   },
+  error: {
+    color: '#ff0000'
+  },
   button: {
     backgroundColor: theme.mainColor,
     borderRadius: 10,

@@ -10,11 +10,30 @@ export default function SignUp() {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
+  const [errors, setErrors] = useState<{ [key: string]: string }>({});
+
+  const validate = () => {
+    const newErrors: { [key: string]: string } = {};
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!email) newErrors.email = 'Email é obrigatório';
+    else if (!emailRegex.test(email)) newErrors.email = 'Email inválido';
+
+    if (!password) newErrors.password = 'Senha é obrigatória';
+    else if (password.length < 6) newErrors.password = 'Senha deve ter pelo menos 6 caracteres';
+
+    if (confirmPassword !== password) newErrors.confirmPassword = 'As senhas não coincidem';
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
 
   const handleSignUp = () => {
-    router.push('screens/verifyEmail');
-    console.log(email + password + confirmPassword);
-  }
+    if (validate()) {
+      console.log(email + password + confirmPassword);
+      router.push('/screens/verifyEmail');
+    }
+  };
 
   return (
     <View style={styles.container}>
@@ -23,61 +42,67 @@ export default function SignUp() {
         source={require("@/app/assets/images/logo.png")}
       />
       <View>
-        <View style={[styles.inputContainer, {marginBottom: 30}]}>
+        <View style={[styles.inputContainer, {marginBottom: 2}]}>
           <TextInput
             style={styles.input}
             placeholder='Email'
             placeholderTextColor={theme.secondText}
             keyboardType='email-address'
             autoCapitalize='none'
-            onChangeText={email => setEmail(email)}
+            onChangeText={setEmail}
+            value={email}
           />
         </View>
+        {errors.email && <Text style={styles.error}>{errors.email}</Text>}
 
-        <View style={[styles.inputContainer, {marginBottom: 30}]}>
+        <View style={[styles.inputContainer, {marginBottom: 2, marginTop: 20 }]}>
           <TextInput
-            style={[styles.input, {width: "90%"}]}
+            style={[styles.input, { width: "90%" }]}
             placeholder='Senha'
             placeholderTextColor={theme.secondText}
             secureTextEntry={!isPasswordVisible}
-            onChangeText={password => setPassword(password)}
+            onChangeText={setPassword}
+            value={password}
           />
           <TouchableOpacity onPress={() => setIsPasswordVisible(!isPasswordVisible)}>
             <Icon
               name={isPasswordVisible ? 'eye-off' : 'eye'}
               size={24}
-              color="#fff"
+              color={theme.text}
             />
           </TouchableOpacity>
         </View>
+        {errors.password && <Text style={styles.error}>{errors.password}</Text>}
 
-        <View style={styles.inputContainer}>
+        <View style={[styles.inputContainer, { marginTop: 20 }]}>
           <TextInput
-            style={[styles.input, {width: "90%"}]}
+            style={[styles.input, { width: "90%" }]}
             placeholder='Confirme a Senha'
             placeholderTextColor={theme.secondText}
             secureTextEntry={!isPasswordVisible}
-            onChangeText={confirmPassword => setConfirmPassword(confirmPassword)}
+            onChangeText={setConfirmPassword}
+            value={confirmPassword}
           />
           <TouchableOpacity onPress={() => setIsPasswordVisible(!isPasswordVisible)}>
             <Icon
               name={isPasswordVisible ? 'eye-off' : 'eye'}
               size={24}
-              color="#fff"
+              color={theme.text}
             />
           </TouchableOpacity>
         </View>
+        {errors.confirmPassword && <Text style={styles.error}>{errors.confirmPassword}</Text>}
 
         <TouchableOpacity style={styles.button} onPress={handleSignUp}>
           <Text style={styles.buttonText}>Cadastrar</Text>
         </TouchableOpacity>
 
-        <Text
-          style={styles.termsAndPolicy}
-        >
-          Ao se cadastrar, você concorda com nossos <Text style={styles.terms} onPress={() => alert('termos')}>Termos de serviço</Text> e <Text style={styles.terms} onPress={() => alert('política')}>Política de privacidade</Text>.
+        <Text style={styles.termsAndPolicy}>
+          Ao se cadastrar, você concorda com nossos{' '}
+          <Text style={styles.terms} onPress={() => alert('termos')}>Termos de serviço</Text> e{' '}
+          <Text style={styles.terms} onPress={() => alert('política')}>Política de privacidade</Text>.
         </Text>
       </View>
     </View>
-  )
+  );
 }
