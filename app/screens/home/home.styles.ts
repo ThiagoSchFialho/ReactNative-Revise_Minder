@@ -1,5 +1,5 @@
 import { Dimensions, StyleSheet } from "react-native";
-import { theme } from "../../constants/theme";
+import { theme } from "@/app/constants/theme";
 
 const screenWidth = Dimensions.get("window").width;
 
@@ -8,7 +8,7 @@ export const styles = StyleSheet.create({
     flex: 1,
     paddingTop: 20,
     paddingHorizontal: 30,
-    backgroundColor: "#171823",
+    backgroundColor: theme.background,
   },
   logo: {
     width: 250,

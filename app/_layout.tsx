@@ -14,7 +14,7 @@ export default function RootLayout() {
     'Montserrat-Bold': require('@/app/assets/fonts/Montserrat-Bold.ttf'),
     'Montserrat-Black': require('@/app/assets/fonts/Montserrat-Black.ttf'),
   });
-
+  
   if (!fontsLoaded) {
     return null;
   }
@@ -26,13 +26,14 @@ export default function RootLayout() {
         backgroundColor={theme.background}
         translucent={false}
       />
-      
+
       <Stack>
         <Stack.Screen name="screens/home/index" options={{ headerShown: false }} />
         <Stack.Screen name="screens/login/index" options={{ headerShown: false}} />
         <Stack.Screen name="screens/signUp/index" options={{ headerShown: false}} />
         <Stack.Screen name="screens/forgotPassword/index" options={{ headerShown: false}} />
         <Stack.Screen name="screens/verifyEmail/index" options={{ headerShown: false}} />
+        <Stack.Screen name="screens/dashboard/index" options={{ headerShown: false}} />
       </Stack>
     </>
   );

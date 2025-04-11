@@ -1,6 +1,7 @@
 import { View, Text, Image, TextInput, TouchableOpacity } from "react-native";
-import { styles } from "./styles";
+import { styles } from "./verifyEmail.styles";
 import { useState, useRef } from "react";
+import { router } from "expo-router";
 
 export default function ForgotPassword() {
   const [code, setCode] = useState<string[]>(["", "", "", "", "", ""]);
@@ -23,7 +24,7 @@ export default function ForgotPassword() {
     }
   };
 
-  const handleFocus = (index: number) => {
+  const handleFocus = () => {
     if (lastEditedIndex !== null) {
       const nextIndex = Math.min(lastEditedIndex + 1, 5);
       inputRefs.current[nextIndex]?.focus();
@@ -34,11 +35,12 @@ export default function ForgotPassword() {
 
   const handleVerificationCode = () => {
     const fullCode = code.join("");
-    alert(fullCode);
+    console.log(fullCode);
+    router.push('/screens/dashboard');
   };
 
   const handleResendVerificationCode = () => {
-    alert("Reenviando código");
+    console.log("Reenviando código");
   };
 
   return (
@@ -62,7 +64,7 @@ export default function ForgotPassword() {
               value={digit}
               onChangeText={(text) => handleCodeChange(text, index)}
               ref={(ref) => (inputRefs.current[index] = ref)}
-              onFocus={() => handleFocus(index)}
+              onFocus={() => handleFocus()}
               onKeyPress={({ nativeEvent }) => {
                 if (nativeEvent.key === "Backspace" && !digit && index > 0) {
                   inputRefs.current[index - 1]?.focus();

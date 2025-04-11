@@ -1,5 +1,5 @@
 import { View, Text, Image, TextInput, TouchableOpacity } from "react-native";
-import { styles } from "./styles";
+import { styles } from "./forgotPassword.styles";
 import { useState } from "react";
 import { theme } from '@/app/constants/theme';
 

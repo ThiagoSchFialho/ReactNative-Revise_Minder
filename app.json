@@ -15,7 +15,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./app/assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.thiago.sch.reviseminder"
     },
     "web": {
       "bundler": "metro",

@@ -8,10 +8,7 @@ export const lightTheme = {
     secondText: 'rgba(23, 24, 35, 0.7)',
     border: '#EEEFF1',
     inputBorder: '#77849E',
-    buttonText: '#FFFFFF',
-    shadow: '0px 2px 5px rgba(5, 55, 73, 0.5)',
-    bigShadow: '0px 2px 10px rgba(5, 55, 73, 0.5)',
-    strongShadow: '0px 0px 15px rgba(5, 55, 73, 0.5)'
+    buttonText: '#FFFFFF'
 }
 
 export const theme = {
@@ -20,12 +17,13 @@ export const theme = {
     secondBackground: '#242533',
     gradientBackground: 'linear-gradient(140deg, #242533, 65%, #11121C 100%)',
     contrastBackground: '#242533',
+    todoBackground: '#37373C',
+    doneBackground: '#189943',
     text: '#FFFFFF',
     secondText: 'rgba(255, 255, 255, 0.7)',
     border: '#2D2F3D',
+    todoBorder: '#4C4C54',
+    doneBorder: '#33D86A',
     inputBorder: '#2D2F3D',
-    buttonText: '#FFFFFF',
-    shadow: '0px 2px 5px rgba(0, 0, 0, 0.5)',
-    bigShadow: '0px 2px 10px rgba(0, 0, 0, 0.5)',
-    strongShadow: '0px 0px 15px rgba(0, 0, 0, 0.5)'
+    buttonText: '#FFFFFF'
 }

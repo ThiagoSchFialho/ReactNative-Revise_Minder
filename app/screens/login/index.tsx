@@ -1,5 +1,5 @@
 import { View, Image, Text, TextInput, TouchableOpacity } from 'react-native';
-import { styles } from './styles';
+import { styles } from './login.styles';
 import { useState } from 'react';
 import { router } from 'expo-router';
 import Icon from 'react-native-vector-icons/Feather';

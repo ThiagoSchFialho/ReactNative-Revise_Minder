@@ -1,5 +1,5 @@
 import { View, Image, Text, TextInput, TouchableOpacity } from 'react-native';
-import { styles } from './styles';
+import { styles } from './signUp.styles';
 import { useState } from 'react';
 import Icon from 'react-native-vector-icons/Feather';
 import { theme } from '@/app/constants/theme';
@@ -12,8 +12,8 @@ export default function SignUp() {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
 
   const handleSignUp = () => {
-    router.push('screens/verifyEmail'),
-    alert(email + password + confirmPassword);
+    router.push('screens/verifyEmail');
+    console.log(email + password + confirmPassword);
   }
 
   return (

@@ -1,5 +1,5 @@
 import { View, Text, Image, Dimensions, ScrollView, TouchableOpacity } from "react-native";
-import { styles } from "./styles";
+import { styles } from "./home.styles";
 import { useState } from "react";
 import { router } from "expo-router";
 
