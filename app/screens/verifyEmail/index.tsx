@@ -36,7 +36,7 @@ export default function ForgotPassword() {
   const handleVerificationCode = () => {
     const fullCode = code.join("");
     console.log(fullCode);
-    router.push('/screens/dashboard');
+    router.push('/tabs/dashboard');
   };
 
   const handleResendVerificationCode = () => {

@@ -95,7 +95,6 @@ export const styles = StyleSheet.create({
   },
   reviewStatus: {
     backgroundColor: '#80D1FF',
-    borderColor: '#0069A3',
     borderWidth: 1,
     borderRadius: 5,
     paddingHorizontal: 10,

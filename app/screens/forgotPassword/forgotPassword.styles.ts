@@ -45,6 +45,9 @@ export const styles = StyleSheet.create({
     fontFamily: "Montserrat-Medium",
     color: theme.text,
   },
+  error: {
+    color: '#FF0000',
+  },
   button: {
     backgroundColor: theme.mainColor,
     borderRadius: 10,

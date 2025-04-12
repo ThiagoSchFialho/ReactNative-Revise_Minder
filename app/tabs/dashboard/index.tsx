@@ -13,12 +13,12 @@ interface Review {
 }
 
 const MockReviews = [
-  { id: 1, topic: "Spread operator - JavaScript", status: "todo", date: "2025-04-11", study_id: 0, user_id: 0 },
-  { id: 2, topic: "Next.js fundamentals", status: "done", date: "2025-04-11", study_id: 0, user_id: 0 },
+  { id: 1, topic: "Spread operator - JavaScript", status: "todo", date: "2025-04-13", study_id: 0, user_id: 0 },
+  { id: 2, topic: "Next.js fundamentals", status: "done", date: "2025-04-13", study_id: 0, user_id: 0 },
   { id: 3, topic: "Array methods: map, filter, reduce", status: "todo", date: "2025-04-12", study_id: 0, user_id: 0 },
   { id: 4, topic: "Mutability vs Immutability in JS", status: "todo", date: "2025-04-12", study_id: 0, user_id: 0 },
-  { id: 5, topic: "Destructuring objects and arrays", status: "todo", date: "2025-04-12", study_id: 0, user_id: 0 },
-  { id: 6, topic: "JavaScript array iteration techniques", status: "todo", date: "2025-04-12", study_id: 0, user_id: 0 },
+  { id: 5, topic: "Destructuring objects and arrays", status: "todo", date: "2025-04-13", study_id: 0, user_id: 0 },
+  { id: 6, topic: "JavaScript array iteration techniques", status: "todo", date: "2025-04-13", study_id: 0, user_id: 0 },
 ];
 
 export default function Dashboard () {
@@ -40,6 +40,10 @@ export default function Dashboard () {
     setTodaysReviews(todaysReviews);
     setFutureReviews(futureReviews);
   }, [reviews]);
+
+  const formatDate = (date: string) => {
+    return dayjs(date).format("DD/MM/YYYY");
+  }
 
   const toggleReviewStatus = (id: number) => {
     setReviews((prevReviews) =>
@@ -69,19 +73,18 @@ export default function Dashboard () {
       <View style={styles.line}></View>
 
       {futureReviews.map((review: Review) => (
-        <TouchableWithoutFeedback key={review.id}>
-          <View style={styles.reviewContainer}>
-            <Text style={styles.futureReviewTopic}>{review.topic}</Text>
-            <View style={styles.reviewInfo}>
-              <View style={styles.reviewStatus}>
-                <Text style={styles.reviewStatusText}>Pendente</Text>
-              </View>
-              <Text style={styles.reviewDate}>{review.date}</Text>
+        <View key={review.id} style={styles.reviewContainer}>
+          <Text style={styles.futureReviewTopic}>{review.topic}</Text>
+          <View style={styles.reviewInfo}>
+            <View style={styles.reviewStatus}>
+              <Text style={styles.reviewStatusText}>Pendente</Text>
             </View>
+            <Text style={styles.reviewDate}>{formatDate(review.date)}</Text>
           </View>
-        </TouchableWithoutFeedback>
+        </View>
       ))}
-      <View style={{marginTop: 50}}></View>
+      
+      <View style={{marginTop: 90}}></View>
     </ScrollView>
   )
 }
