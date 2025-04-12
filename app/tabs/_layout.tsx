@@ -52,7 +52,52 @@ export default function TabsLayout() {
           ),
           tabBarLabel: "Estudos"
         }}
-      />  
+      />
+
+      <Tabs.Screen
+        name="addStudy/index"
+        options={{
+          tabBarIcon: () => (
+            <Image
+              source={require("@/app/assets/images/tabBar/addStudy.png")}
+              style={{height: 60, width: 60, marginBottom: 35}}
+            />
+          ),
+          tabBarLabel: ""
+        }}
+      />
+
+      <Tabs.Screen
+        name="reviews/index"
+        options={{
+          tabBarIcon: ({ focused }) => (
+            <Image
+            source={
+              focused ? require("@/app/assets/images/tabBar/reviews-selected.png")
+              : require("@/app/assets/images/tabBar/reviews.png")
+            }
+              style={{height: 30, width: 24, marginBottom: 10}}
+            />
+          ),
+          tabBarLabel: "Revisões"
+        }}
+      />
+
+      <Tabs.Screen
+        name="profile/index"
+        options={{
+          tabBarIcon: ({ focused }) => (
+            <Image
+            source={
+              focused ? require("@/app/assets/images/tabBar/profile-selected.png")
+              : require("@/app/assets/images/tabBar/profile.png")
+            }
+              style={{height: 30, width: 30, marginBottom: 10}}
+            />
+          ),
+          tabBarLabel: "Perfil"
+        }}
+      />
     </Tabs>
   );
 }
