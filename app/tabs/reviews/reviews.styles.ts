@@ -37,7 +37,6 @@ export const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   reviewStatus: {
-    backgroundColor: '#80FFD1',
     borderWidth: 1,
     borderRadius: 5,
     paddingHorizontal: 10,
@@ -45,8 +44,7 @@ export const styles = StyleSheet.create({
   },
   reviewStatusText: {
     fontFamily: "Montserrat-SemiBold",
-    fontSize: 14,
-    color: '#006B45'
+    fontSize: 14
   },
   reviewDate: {
     fontFamily: "Montserrat-Medium",

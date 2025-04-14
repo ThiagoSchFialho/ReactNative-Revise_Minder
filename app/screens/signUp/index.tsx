@@ -30,7 +30,7 @@ export default function SignUp() {
 
   const handleSignUp = () => {
     if (validate()) {
-      console.log(email + password + confirmPassword);
+      console.log({ email, password, confirmPassword });
       router.push('/screens/verifyEmail');
     }
   };

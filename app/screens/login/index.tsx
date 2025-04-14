@@ -27,7 +27,7 @@ export default function Login() {
 
   const handleLogin = () => {
     if (validate()) {
-      console.log(email + password);
+      console.log({ email, password });
       router.push('/tabs/dashboard');
     }
   }
