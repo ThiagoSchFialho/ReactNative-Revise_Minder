@@ -36,29 +36,17 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between',
   },
-  reviewStatusDone: {
+  reviewStatus: {
     backgroundColor: '#80FFD1',
     borderWidth: 1,
     borderRadius: 5,
     paddingHorizontal: 10,
     paddingVertical: 3
   },
-  reviewStatusTodo: {
-    backgroundColor: '#FF8080',
-    borderWidth: 1,
-    borderRadius: 5,
-    paddingHorizontal: 10,
-    paddingVertical: 3
-  },
-  reviewStatusTextDone: {
+  reviewStatusText: {
     fontFamily: "Montserrat-SemiBold",
     fontSize: 14,
     color: '#006B45'
-  },
-  reviewStatusTextTodo: {
-    fontFamily: "Montserrat-SemiBold",
-    fontSize: 14,
-    color: '#A30000'
   },
   reviewDate: {
     fontFamily: "Montserrat-Medium",

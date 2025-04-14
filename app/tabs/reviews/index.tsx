@@ -46,9 +46,18 @@ export default function Reviews () {
         <View key={review.id} style={styles.reviewContainer}>
           <Text style={styles.reviewTopic}>{review.topic}</Text>
           <View style={styles.reviewInfo}>
-            <View style={review.status == "done" ? styles.reviewStatusDone : styles.reviewStatusTodo}>
+            <View style={
+              [
+                styles.reviewStatus,
+                review.status == "done" ? {backgroundColor: '#80FFD1'} : {backgroundColor: '#FF8080'}
+              ]}
+            >
               <Text
-                style={review.status == "done" ? styles.reviewStatusTextDone : styles.reviewStatusTextTodo}
+                style={
+                  [
+                    styles.reviewStatusText,
+                    review.status == "done" ? {color: '#006B45'} : {color: '#A30000'}
+                  ]}
               >
                 {review.status == "done" ? "Realizada" : "Não realizada"}
               </Text>
