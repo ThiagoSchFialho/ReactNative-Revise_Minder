@@ -79,7 +79,7 @@ export const styles = StyleSheet.create({
     borderRadius: 10,
     paddingVertical: 15,
     paddingHorizontal: 15,
-    marginBottom: 20,
+    marginBottom: 25,
     elevation: 5
   },
   futureReviewTopic: {
