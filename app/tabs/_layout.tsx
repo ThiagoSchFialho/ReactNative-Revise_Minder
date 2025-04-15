@@ -7,9 +7,10 @@ export default function TabsLayout() {
     <Tabs
       screenOptions={{
         headerShown: false,
+        tabBarHideOnKeyboard: true,
         tabBarStyle: {
           backgroundColor: theme.navigationBackground,
-          height: 60,
+          height: 65,
           position: "absolute",
           borderTopWidth: 1,
           borderColor: theme.navigationBorder,
