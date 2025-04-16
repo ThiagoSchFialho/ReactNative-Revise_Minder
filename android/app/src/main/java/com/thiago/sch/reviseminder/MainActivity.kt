@@ -2,6 +2,8 @@ package com.thiago.sch.reviseminder
 import expo.modules.splashscreen.SplashScreenManager
 
 import android.os.Build
+import android.view.Window;
+import android.graphics.Color;
 import android.os.Bundle
 
 import com.facebook.react.ReactActivity
@@ -21,6 +23,11 @@ class MainActivity : ReactActivity() {
     SplashScreenManager.registerOnActivity(this)
     // @generated end expo-splashscreen
     super.onCreate(null)
+
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+    val window: Window = window
+    window.navigationBarColor = Color.parseColor("#171823")
+  }
   }
 
   /**

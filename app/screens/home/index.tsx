@@ -1,7 +1,8 @@
 import { View, Text, Image, Dimensions, ScrollView, TouchableOpacity } from "react-native";
 import { styles } from "./home.styles";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { router } from "expo-router";
+import changeNavigationBarColor from "react-native-navigation-bar-color";
 
 interface Benefit {
   image: any;
@@ -12,6 +13,10 @@ interface Benefit {
 export default function Home() {
   const screenWidth = Dimensions.get("window").width;
   const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    changeNavigationBarColor('#171823', false);
+  }, []);
 
   const RenderBenefitItem = ({ item }: { item: Benefit }) => {
     return (

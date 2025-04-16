@@ -1,7 +1,8 @@
-import { View, Text, ScrollView, TouchableWithoutFeedback } from 'react-native';
+import { View, Text, ScrollView, TouchableWithoutFeedback, StatusBar } from 'react-native';
 import { styles } from './dashboard.styles';
 import { useEffect, useState } from 'react';
 import dayjs from 'dayjs';
+import changeNavigationBarColor from 'react-native-navigation-bar-color';
 
 interface Review {
   id: number;
@@ -26,8 +27,16 @@ export default function Dashboard () {
   const [todaysReviews, setTodaysReviews] = useState<Review[]>([]);
   const [futureReviews, setFutureReviews] = useState<Review[]>([]);
 
-  const today = dayjs().startOf('day');
+  useEffect(() => {
+    changeNavigationBarColor('#080A1A', false);
+  }, []);
 
+  useEffect(() => {
+    StatusBar.setBarStyle('light-content');
+    StatusBar.setBackgroundColor('#171823');
+  }, []);
+
+  const today = dayjs().startOf('day');
   useEffect(() => {
     const todaysReviews = reviews?.filter((review: Review) => {
       return dayjs(review.date).startOf('day').isSame(today);
