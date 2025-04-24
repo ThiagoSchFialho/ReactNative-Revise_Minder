@@ -4,8 +4,10 @@ import { useState } from 'react';
 import Icon from 'react-native-vector-icons/Feather';
 import { theme } from '@/app/constants/theme';
 import { router } from 'expo-router';
+import Constants from 'expo-constants';
 
 export default function SignUp() {
+  const apiUrl = Constants.expoConfig?.extra?.API_URL;
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
@@ -30,6 +32,7 @@ export default function SignUp() {
 
   const handleSignUp = () => {
     if (validate()) {
+      console.log('API_URL:', apiUrl);
       console.log({ email, password, confirmPassword });
       router.push('/screens/verifyEmail');
     }
