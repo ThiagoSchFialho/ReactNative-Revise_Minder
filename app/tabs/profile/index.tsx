@@ -42,7 +42,7 @@ export default function Reviews () {
       </View>
 
       <Text style={styles.label}>Senha</Text>
-      <TouchableOpacity style={styles.inputContainer} onPress={() => router.push('/tabs/dashboard')}>
+      <TouchableOpacity style={styles.inputContainer} onPress={() => router.push('../screens/changePassword')}>
         <TextInput
           style={styles.input}
           value={'Display password'}
