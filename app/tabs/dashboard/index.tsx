@@ -14,12 +14,12 @@ interface Review {
 }
 
 const MockReviews = [
-  { id: 1, topic: "Spread operator - JavaScript", status: "todo", date: "2025-04-14", study_id: 0, user_id: 0 },
-  { id: 2, topic: "Next.js fundamentals", status: "done", date: "2025-04-14", study_id: 0, user_id: 0 },
-  { id: 3, topic: "Array methods", status: "todo", date: "2025-04-17", study_id: 0, user_id: 0 },
-  { id: 4, topic: "Mutability vs Immutability in JS", status: "todo", date: "2025-04-18", study_id: 0, user_id: 0 },
-  { id: 5, topic: "Destructuring objects and arrays", status: "todo", date: "2025-04-19", study_id: 0, user_id: 0 },
-  { id: 6, topic: "JavaScript array iteration techniques", status: "todo", date: "2025-04-20", study_id: 0, user_id: 0 },
+  { id: 1, topic: "Spread operator - JavaScript", status: "todo", date: "2025-04-29", study_id: 0, user_id: 0 },
+  { id: 2, topic: "Next.js fundamentals", status: "done", date: "2025-04-30", study_id: 0, user_id: 0 },
+  { id: 3, topic: "Array methods", status: "todo", date: "2025-05-01", study_id: 0, user_id: 0 },
+  { id: 4, topic: "Mutability vs Immutability in JS", status: "todo", date: "2025-05-02", study_id: 0, user_id: 0 },
+  { id: 5, topic: "Destructuring objects and arrays", status: "todo", date: "2025-05-03", study_id: 0, user_id: 0 },
+  { id: 6, topic: "JavaScript array iteration techniques", status: "todo", date: "2025-05-04", study_id: 0, user_id: 0 },
 ];
 
 export default function Dashboard () {

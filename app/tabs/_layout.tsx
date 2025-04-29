@@ -56,7 +56,7 @@ export default function TabsLayout() {
       />
 
       <Tabs.Screen
-        name="addStudy/index"
+        name="studyForm/index"
         options={{
           tabBarIcon: () => (
             <Image

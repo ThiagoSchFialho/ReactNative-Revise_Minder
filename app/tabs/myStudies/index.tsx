@@ -3,6 +3,7 @@ import { styles } from './myStudies.styles';
 import { useState } from 'react';
 import dayjs from 'dayjs';
 import Icon from 'react-native-vector-icons/Feather';
+import { router } from 'expo-router';
 
 interface Study {
   id: number;
@@ -53,7 +54,12 @@ export default function MyStudies () {
               </View>
               {openMenuId === study.id && (
                 <View style={styles.menuBox}>
-                  <TouchableOpacity onPress={() => console.log('Editar', study.id)}>
+                  <TouchableOpacity onPress={() => router.push({
+                    pathname: '/tabs/studyForm',
+                    params: {
+                      id: String(study.id)
+                    }
+                  })}>
                   <View style={styles.menuItemContainer}>
                       <Icon
                         name={'edit'}

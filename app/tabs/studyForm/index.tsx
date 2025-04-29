@@ -1,16 +1,40 @@
 import { Text, TextInput, TouchableOpacity, View, Platform } from 'react-native';
-import { styles } from './addStudy.styles';
-import { useState } from 'react';
+import { styles } from './studyForm.styles';
+import { useCallback, useEffect, useState } from 'react';
 import DateTimePicker from '@react-native-community/datetimepicker';
 import dayjs from 'dayjs';
 import Icon from 'react-native-vector-icons/Feather';
+import { useFocusEffect, useLocalSearchParams } from 'expo-router';
 
-export default function AddStudy () {
+const MockStudies = [
+  { id: 1, topic: 'JavaScript', qnt_reviews: 3, date: '2025-04-11', user_id: 1 },
+  { id: 2, topic: 'React Native', qnt_reviews: 2, date: '2025-04-10', user_id: 1 },
+  { id: 3, topic: 'TypeScript', qnt_reviews: 4, date: '2025-04-09', user_id: 1 },
+  { id: 4, topic: 'Node.js', qnt_reviews: 1, date: '2025-04-08', user_id: 1 },
+  { id: 5, topic: 'JavaScript array iteration techniques', qnt_reviews: 5, date: '2025-04-07', user_id: 1 },
+  { id: 6, topic: 'Docker', qnt_reviews: 3, date: '2025-04-06', user_id: 1 }
+];
+
+export default function StudyForm () {
+  const { id } = useLocalSearchParams();
   const [topic, setTopic] = useState<string>('');
   const [qntReviews, setQntReviews] = useState<number>(3);
   const [studyDate, setStudyDate] = useState<Date | null>(new Date());
   const [showDatePicker, setShowDatePicker] = useState(false);
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
+
+  useFocusEffect(
+    useCallback(() => {
+      if (id) {
+        const study = MockStudies.find((s) => s.id === Number(id));
+        if (study) {
+          setTopic(study.topic);
+          setQntReviews(study.qnt_reviews);
+          setStudyDate(new Date(study.date));
+        }
+      }
+    }, [id])
+  );
 
   const validate = () => {
     const newErrors: { [key: string]: string } = {};
@@ -110,7 +134,7 @@ export default function AddStudy () {
       )}
 
       <TouchableOpacity style={styles.button} onPress={handleSubmit}>
-        <Text style={styles.buttonText}>Adicionar</Text>
+        <Text style={styles.buttonText}>{id ? "Salvar" : "Adicionar"}</Text>
       </TouchableOpacity>
     </View>
   )
